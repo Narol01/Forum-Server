@@ -83,8 +83,6 @@ public class ForumServiceImpl implements ForumService {
         existingPost.setTitle(postAddDto.getTitle());
         existingPost.setTags(postAddDto.getTags());
         existingPost.setContent(postAddDto.getContent());
-
-        // Сохранить обновленный пост в репозитории
         Post updatedPost = forumRepository.save(existingPost);
         return modelMapper.map(updatedPost,PostDto.class);
     }
