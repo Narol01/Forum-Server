@@ -15,7 +15,6 @@ import java.util.Set;
 @NoArgsConstructor
 
 public class PostDto {
-     @Id
      private String  id;
      private String title;
      private String content;
@@ -23,14 +22,13 @@ public class PostDto {
      private LocalDateTime dateCreated = LocalDateTime.now();
      private Set<String> tags;
      private int likes;
-     private List<String> comments;
-     public PostDto( String title, String content, String author, Set<String> tags, List<String> comments) {
+     private List<CommentsDto> comments;
+     public PostDto( String title, String content, String author, Set<String> tags) {
           this.title = title;
           this.content = content;
           this.author = author;
           this.tags = tags;
           this.likes = 0;
-          this.comments = comments;
           this.dateCreated=getDateCreated();
      }
 }
